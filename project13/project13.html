@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Project 13">
+	<title>Project 13</title>
+	<style>
+		#mouse_events, #colors {
+			margin:3em;
+			width:300px;
+			height:300px;
+			background-color:gray;
+			}
+	
+	</style>
+</head>
+
+<body>
+	<header>
+		<h1>Project 13</h1>
+	</header>
+	
+	<main>
+		<h2>One</h2>
+		<p><button type="button" id="button1">Alert</button></p>
+		
+		<h2>Two</h2>
+		<p><button type="button" id="button2">Prompt</button></p>
+		
+		<h2>Four</h2>
+		<div id="mouse_events">Mouse Events</div>
+		
+		<h2>Five</h2>
+		<form>
+			First: <input type="text" id="first"><br>
+			Second: <input type="text" id="second"><br>
+			<p><button type="button" id="button3">Check</button></p>
+		</form>
+		
+		<h2>Three</h2>
+	</main>
+	
+	<script>
+		var myButton1 = document.getElementById('button1');
+		myButton1.addEventListener("click", function (){
+			alert("Woah There!");
+		});
+		
+		var myButton2 = document.getElementById('button2');
+		myButton2.addEventListener("click", function (){
+			var name = prompt("Please enter your name:","John Doe");
+			for(i = 0; i < 5; i++) {
+			console.log(name);
+			};
+		});
+		
+		
+		var rainbow_colors = ["Red", "Orange", "Yellow", "Green", "Blue", "Indigo", "Violet"];
+		for (var i = 0; i < rainbow_colors.length; i++) {
+			document.write(rainbow_colors[i] + '<br>');
+			
+		};
+			
+		
+		
+		
+		var in_or_out = document.getElementById('mouse_events');
+		in_or_out.addEventListener("mouseover", function (){
+			console.log('Mouse entered the box');
+		});
+		in_or_out.addEventListener("mouseout", function () {
+			console.log("Mouse left the box");
+		});
+		
+		var myButton3 = document.getElementById('button3');
+		var former = document.getElementById('first');
+		var latter = document.getElementById('second');
+		myButton3.addEventListener("click", function (){
+			if (former.value == latter.value) {
+				alert("The values are equal.");
+			} else {
+				alert("The values are not equal.");}
+		});
+	</script>
+</body>
+
+</html>

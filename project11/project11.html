@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Project 11">
+	<title>Project 11</title>
+	<style>
+		.river, .sailboat, .skyline {margin:2em; max-width:70%; max-height:70%; transition:all 1s ease-in-out;}
+		
+		.river:hover {-webkit-transform:rotate(180deg);}
+		
+		.sailboat:hover {-webkit-transform:scale(1.5);}
+		
+		.skyline:hover {-webkit-transform:skewX(20deg);}
+		
+		.box1, .box2 {margin:3em; width:300px; height:300px; transition:all 1s ease-in-out;}
+		
+		.box1 {background-color:orange; box-shadow:10px 10px 10px black;}
+		.box1:hover {background-color:black; box-shadow:10px 10px 10px orange;}
+		
+		.box2 {background-color:black;}
+		.box2:hover {-webkit-transform:rotate(25deg) scale(1.05); -webkit-transform-origin:100% 0%;}
+		
+	</style>
+</head>
+
+<body>
+
+	<header>
+		<h1>Transitions, Transforms, and Default Windows Photos</h1>
+	</header>
+	
+	<main>
+		<img class="river" src="river.jpg" alt="A River">
+		
+		<img class="sailboat" src="sailboat.jpg" alt="A Sailboat">
+		
+		<img class="skyline" src="skyline.jpg" alt="A Skyline">
+		
+		<div class="box1"></div>
+		
+		<div class="box2"></div>
+	</main>
+	
+</body>
+
+
+</html>

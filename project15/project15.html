@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Project 15</title>
+  <style>
+    html {margin:1em; font-family:Helvetica, Arial, sans-serif;}
+    h2 {clear:both;}
+    .box {width:200px; height:200px; border:1px solid #000; background-color:#ddd;}
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+</head>
+<body>
+  <header><h1>Project 15</h1></header>
+
+  <h2>Source and Target</h2>
+  <h3>Source</h3>
+  <input type="text" id="text1" placeholder="Type here">
+  <h3>Target</h3>
+  <input type="text" id="text2" readonly="true" placeholder="Echo the result here">
+  <script>
+		$('#text1').on("keyup", function() {
+			var $text1 = $('#text1').val();
+			$('#text2').val($text1);
+		});
+		
+		/*var first_text = document.getElementById('text1');
+		first_text.onkeyup = function(){
+			var first_text = document.getElementById('text1');
+			document.getElementById('text2').value = first_text.value;
+		};*/
+  </script>
+
+  <hr>
+
+  <h2>Image Swap</h2>
+  <img id="kitten" src="http://placekitten.com/g/300/200" title="A kitten" alt="A kitten"><br>
+  <input type="text" id="get-img" placeholder="Enter image url here"><button id="update-img">Update</button>
+  <script>
+		$('#update-img').on("click", function() {
+			var $kitten = $('#kitten');
+			var $new_pic = $('#get-img').val();
+			$kitten.attr('src', $new_pic);
+			$kitten.attr('alt', 'A new picture');
+			$kitten.attr('title', 'A new picture');
+		});
+		
+		/*document.getElementById('update-img').addEventListener("click", function(){
+			var kitten = document.getElementById('kitten');
+			var new_pic = document.getElementById('get-img');
+			kitten.setAttribute('src', new_pic.value);
+			kitten.setAttribute('alt', 'A new picture');
+			kitten.setAttribute('title', 'A new picture');
+		});*/
+  </script>
+
+  <hr>
+
+  <h2>Font Sizer</h2>
+  <p id="to-style">This is my paragraph of stuff.</p><br>
+  <input type="text" id="font-size" placeholder="Enter a font size"><button id="font-button">Make it so</button>
+  <script>
+		$('#font-button').on("click", function() {
+			var $font_size = $('#font-size').val();
+			var $to_style = $('#to-style');
+			$to_style.attr('style', "font-size: " + $font_size + "px");
+		});
+				
+		/*document.getElementById('font-button').addEventListener("click", function(){
+			var font_size = document.getElementById('font-size');
+			var to_style = document.getElementById('to-style');
+			to_style.setAttribute('style', "font-size: " + font_size.value + "px");
+		});*/
+  </script>
+
+  <hr>
+
+  <h2>Attribute Reporter</h2>
+  <img id="kitten2" src="http://placekitten.com/g/300/200" title="A kitten" alt="A kitten"><br>
+  <button id="get-attr">Log Attributes</button>
+  <script>
+		$('#get-attr').on("click", function() {
+			var $source = $('#kitten2').attr("src");
+			var $alt1 = $('#kitten2').attr("alt");
+			console.log($source);
+			console.log($alt1);
+		});
+		
+		/*document.getElementById('get-attr').addEventListener("click", function(){
+			var source = document.getElementById("kitten2").getAttribute("src");
+			var alt1 = document.getElementById("kitten2").getAttribute("alt");
+			console.log(source);
+			console.log(alt1);
+		});*/
+  </script>
+
+  <hr>
+
+  <h2>Element Counter</h2>
+  <input type="text" id="element-type" placeholder="Which element?"><br>
+  <button id="count">Count the Elements</button>
+  <input type="text" id="element-count" placeholder="Results here" readonly="true">
+  <script>
+		$('#count').on("click", function() {
+			var $which_element = $('#element-type').val();
+			var $answer = document.querySelectorAll($which_element);
+			$('#element-count').val($answer.length);
+		});
+		
+		/*document.getElementById('count').addEventListener("click", function(){
+			var which_element = document.getElementById("element-type");
+			var answer = document.querySelectorAll(which_element.value);
+			document.getElementById('element-count').value = answer.length;
+		});*/
+  </script>
+
+
+</body>
+</html>
